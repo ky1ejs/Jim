@@ -1,6 +1,6 @@
 
 # Jim :muscle:
-### Your PT
+### Your PT in your pocket and on your wrist
 
 I had the idea for Jim in 2012 when first starting iOS development and my Software Engineering degree. I used it to learn the basics of programming, Obj-C and Cocoa Touch.
 
