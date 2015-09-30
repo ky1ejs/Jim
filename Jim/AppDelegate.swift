@@ -7,16 +7,41 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Parse.setApplicationId(parseAppID, clientKey: parseClientID)
+        
+        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window = window
+        if let _ = PFUser.currentUser() {
+            let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            self.window?.rootViewController = storyboard.instantiateInitialViewController()
+        } else {
+            let loginVC = PFLogInViewController()
+            loginVC.delegate = self
+            window.rootViewController = loginVC
+        }
+        window.makeKeyAndVisible()
         return true
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        self.window?.rootViewController = storyboard.instantiateInitialViewController()
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        self.window?.rootViewController = storyboard.instantiateInitialViewController()
     }
 
     func applicationWillResignActive(application: UIApplication) {

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AF16139B1BBC87DC008589E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16139A1BBC87DC008589E2 /* AppDelegate.swift */; };
-		AF16139D1BBC87DC008589E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16139C1BBC87DC008589E2 /* ViewController.swift */; };
-		AF1613A01BBC87DC008589E2 /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF16139E1BBC87DC008589E2 /* Landing.storyboard */; };
+		AF16139D1BBC87DC008589E2 /* WorkoutsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16139C1BBC87DC008589E2 /* WorkoutsTVC.swift */; };
+		AF1613A01BBC87DC008589E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF16139E1BBC87DC008589E2 /* Main.storyboard */; };
 		AF1613A21BBC87DC008589E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1613A11BBC87DC008589E2 /* Assets.xcassets */; };
 		AF1613A51BBC87DC008589E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1613A31BBC87DC008589E2 /* LaunchScreen.storyboard */; };
 		AF1613B01BBC87DC008589E2 /* JimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613AF1BBC87DC008589E2 /* JimTests.swift */; };
@@ -23,6 +23,8 @@
 		AF1613D71BBC89D5008589E2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D41BBC89D5008589E2 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
 		AF1613D91BBC8A35008589E2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D81BBC8A35008589E2 /* CoreLocation.framework */; };
 		AF1613DB1BBC8A3C008589E2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613DA1BBC8A3C008589E2 /* StoreKit.framework */; };
+		AF1613DD1BBC93AB008589E2 /* ParseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */; settings = {ASSET_TAGS = (); }; };
+		AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +47,8 @@
 /* Begin PBXFileReference section */
 		AF1613971BBC87DC008589E2 /* Jim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF16139A1BBC87DC008589E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF16139C1BBC87DC008589E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF16139F1BBC87DC008589E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Landing.storyboard; sourceTree = "<group>"; };
+		AF16139C1BBC87DC008589E2 /* WorkoutsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTVC.swift; sourceTree = "<group>"; };
+		AF16139F1BBC87DC008589E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF1613A11BBC87DC008589E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF1613A41BBC87DC008589E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF1613A61BBC87DC008589E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +67,8 @@
 		AF1613D41BBC89D5008589E2 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		AF1613D81BBC8A35008589E2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AF1613DA1BBC8A3C008589E2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseKeys.swift; sourceTree = "<group>"; };
+		AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				AF16139A1BBC87DC008589E2 /* AppDelegate.swift */,
-				AF16139E1BBC87DC008589E2 /* Landing.storyboard */,
-				AF16139C1BBC87DC008589E2 /* ViewController.swift */,
+				AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */,
+				AF16139E1BBC87DC008589E2 /* Main.storyboard */,
+				AF16139C1BBC87DC008589E2 /* WorkoutsTVC.swift */,
+				AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */,
 				AF1613A11BBC87DC008589E2 /* Assets.xcassets */,
 				AF1613A31BBC87DC008589E2 /* LaunchScreen.storyboard */,
 				AF1613A61BBC87DC008589E2 /* Info.plist */,
@@ -282,7 +288,7 @@
 			files = (
 				AF1613A51BBC87DC008589E2 /* LaunchScreen.storyboard in Resources */,
 				AF1613A21BBC87DC008589E2 /* Assets.xcassets in Resources */,
-				AF1613A01BBC87DC008589E2 /* Landing.storyboard in Resources */,
+				AF1613A01BBC87DC008589E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,8 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF16139D1BBC87DC008589E2 /* ViewController.swift in Sources */,
+				AF16139D1BBC87DC008589E2 /* WorkoutsTVC.swift in Sources */,
+				AF1613DD1BBC93AB008589E2 /* ParseKeys.swift in Sources */,
 				AF16139B1BBC87DC008589E2 /* AppDelegate.swift in Sources */,
+				AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,12 +352,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AF16139E1BBC87DC008589E2 /* Landing.storyboard */ = {
+		AF16139E1BBC87DC008589E2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AF16139F1BBC87DC008589E2 /* Base */,
 			);
-			name = Landing.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		AF1613A31BBC87DC008589E2 /* LaunchScreen.storyboard */ = {
