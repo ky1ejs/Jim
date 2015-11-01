@@ -18,13 +18,15 @@
 		AF1613CB1BBC894E008589E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613CA1BBC894E008589E2 /* SystemConfiguration.framework */; };
 		AF1613CD1BBC8956008589E2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613CC1BBC8956008589E2 /* AudioToolbox.framework */; };
 		AF1613CF1BBC895F008589E2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613CE1BBC895F008589E2 /* libsqlite3.tbd */; };
-		AF1613D51BBC89D5008589E2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D21BBC89D5008589E2 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
-		AF1613D61BBC89D5008589E2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D31BBC89D5008589E2 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
-		AF1613D71BBC89D5008589E2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D41BBC89D5008589E2 /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		AF1613D51BBC89D5008589E2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D21BBC89D5008589E2 /* Bolts.framework */; };
+		AF1613D61BBC89D5008589E2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D31BBC89D5008589E2 /* Parse.framework */; };
+		AF1613D71BBC89D5008589E2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D41BBC89D5008589E2 /* ParseUI.framework */; };
 		AF1613D91BBC8A35008589E2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613D81BBC8A35008589E2 /* CoreLocation.framework */; };
 		AF1613DB1BBC8A3C008589E2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613DA1BBC8A3C008589E2 /* StoreKit.framework */; };
-		AF1613DD1BBC93AB008589E2 /* ParseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */; settings = {ASSET_TAGS = (); }; };
-		AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */; settings = {ASSET_TAGS = (); }; };
+		AF1613DD1BBC93AB008589E2 /* ParseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */; };
+		AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */; };
+		AF8F700B1BE6D9EF00064AE2 /* ExcercisesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */; };
+		AFD7D30F1BC00E0E00953826 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7D30E1BC00E0E00953826 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		AF1613DA1BBC8A3C008589E2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseKeys.swift; sourceTree = "<group>"; };
 		AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutTVC.swift; sourceTree = "<group>"; };
+		AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcercisesTVC.swift; sourceTree = "<group>"; };
+		AFD7D30E1BC00E0E00953826 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +137,9 @@
 				AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */,
 				AF16139E1BBC87DC008589E2 /* Main.storyboard */,
 				AF16139C1BBC87DC008589E2 /* WorkoutsTVC.swift */,
+				AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */,
 				AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */,
+				AFD7D30E1BC00E0E00953826 /* Extensions.swift */,
 				AF1613A11BBC87DC008589E2 /* Assets.xcassets */,
 				AF1613A31BBC87DC008589E2 /* LaunchScreen.storyboard */,
 				AF1613A61BBC87DC008589E2 /* Info.plist */,
@@ -313,10 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFD7D30F1BC00E0E00953826 /* Extensions.swift in Sources */,
 				AF16139D1BBC87DC008589E2 /* WorkoutsTVC.swift in Sources */,
 				AF1613DD1BBC93AB008589E2 /* ParseKeys.swift in Sources */,
 				AF16139B1BBC87DC008589E2 /* AppDelegate.swift in Sources */,
 				AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */,
+				AF8F700B1BE6D9EF00064AE2 /* ExcercisesTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +557,7 @@
 				AF1613C11BBC87DC008589E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF1613C21BBC87DC008589E2 /* Build configuration list for PBXNativeTarget "JimTests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +566,7 @@
 				AF1613C41BBC87DC008589E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF1613C51BBC87DC008589E2 /* Build configuration list for PBXNativeTarget "JimUITests" */ = {
 			isa = XCConfigurationList;
@@ -565,6 +575,7 @@
 				AF1613C71BBC87DC008589E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
