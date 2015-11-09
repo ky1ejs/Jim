@@ -27,11 +27,8 @@ class AddWorkoutTVC: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 1:
-            let count = self.excercises.count
-            return count > 1 ? count : 1
-        default:
-            return super.tableView(tableView, numberOfRowsInSection: section)
+        case 1:     return self.excercises.count + 1
+        default:    return super.tableView(tableView, numberOfRowsInSection: section)
         }
     }
     
@@ -43,7 +40,7 @@ class AddWorkoutTVC: UITableViewController {
                 cell.textLabel?.text = excerciseForRow["name"] as? String
                 return cell
             } else {
-                return tableView.dequeueReusableCellWithIdentifier("AddExcerciseCell")!
+                return super.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 1, inSection: 1))
             }
         default:
             return super.tableView(tableView, cellForRowAtIndexPath: indexPath)

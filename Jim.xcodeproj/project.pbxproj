@@ -26,6 +26,7 @@
 		AF1613DD1BBC93AB008589E2 /* ParseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */; };
 		AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */; };
 		AF8F700B1BE6D9EF00064AE2 /* ExcercisesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */; };
+		AFB43E411BEE8E89007E8111 /* SelectExercisesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB43E401BEE8E89007E8111 /* SelectExercisesTVC.swift */; };
 		AFD7D30F1BC00E0E00953826 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7D30E1BC00E0E00953826 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseKeys.swift; sourceTree = "<group>"; };
 		AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutTVC.swift; sourceTree = "<group>"; };
 		AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcercisesTVC.swift; sourceTree = "<group>"; };
+		AFB43E401BEE8E89007E8111 /* SelectExercisesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectExercisesTVC.swift; sourceTree = "<group>"; };
 		AFD7D30E1BC00E0E00953826 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,9 +138,8 @@
 				AF16139A1BBC87DC008589E2 /* AppDelegate.swift */,
 				AF1613DC1BBC93AB008589E2 /* ParseKeys.swift */,
 				AF16139E1BBC87DC008589E2 /* Main.storyboard */,
-				AF16139C1BBC87DC008589E2 /* WorkoutsTVC.swift */,
+				AFB43E421BEE8E91007E8111 /* Workouts */,
 				AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */,
-				AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */,
 				AFD7D30E1BC00E0E00953826 /* Extensions.swift */,
 				AF1613A11BBC87DC008589E2 /* Assets.xcassets */,
 				AF1613A31BBC87DC008589E2 /* LaunchScreen.storyboard */,
@@ -187,6 +188,16 @@
 				AF1613D41BBC89D5008589E2 /* ParseUI.framework */,
 			);
 			path = Parse;
+			sourceTree = "<group>";
+		};
+		AFB43E421BEE8E91007E8111 /* Workouts */ = {
+			isa = PBXGroup;
+			children = (
+				AF16139C1BBC87DC008589E2 /* WorkoutsTVC.swift */,
+				AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */,
+				AFB43E401BEE8E89007E8111 /* SelectExercisesTVC.swift */,
+			);
+			name = Workouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +336,7 @@
 				AF16139B1BBC87DC008589E2 /* AppDelegate.swift in Sources */,
 				AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */,
 				AF8F700B1BE6D9EF00064AE2 /* ExcercisesTVC.swift in Sources */,
+				AFB43E411BEE8E89007E8111 /* SelectExercisesTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
