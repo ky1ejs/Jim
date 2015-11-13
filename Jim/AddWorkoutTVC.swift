@@ -10,32 +10,50 @@ import UIKit
 import Parse
 
 class AddWorkoutTVC: UITableViewController {
-    private var excercises = [PFObject]()
+    lazy var workout: PFObject? = {
+        guard let user = PFUser.currentUser() else {
+            return nil
+        }
+        let wo = PFObject(className: "Workout")
+        wo.ACL = PFACL(user: user)
+        return wo
+    }()
     
     @IBOutlet private weak var nameTF: UITextField!
     
+    override func viewDidLoad() {
+        self.nameTF.text = self.workout?["name"] as? String
+    }
+    
     @IBAction func save() {
-        guard let user = PFUser.currentUser() else {
-            return
-        }
-        let workout = PFObject(className: "Workout")
-        workout["name"] = self.nameTF.text
-        workout.ACL = PFACL(user: user)
-        let _ = try? workout.save()
+        let workout = self.workout
+        workout?["name"] = self.nameTF.text
+        let _ = try? workout?.save()
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 1:     return self.excercises.count + 1
-        default:    return super.tableView(tableView, numberOfRowsInSection: section)
+        case 1:
+            if let exercises = self.workout?["exercises"] as? [PFObject] {
+                return exercises.count + 1
+            } else {
+                return 1
+            }
+        default:
+            return super.tableView(tableView, numberOfRowsInSection: section)
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
-            if let excerciseForRow = self.excercises[safe: indexPath.row] {
+            if let exercises = self.workout?["exercises"] as? [PFObject], excerciseForRow = exercises[safe: indexPath.row] {
                 let cell = tableView.dequeueReusableCellWithIdentifier("ExcerciseCell")!
                 cell.textLabel?.text = excerciseForRow["name"] as? String
                 return cell

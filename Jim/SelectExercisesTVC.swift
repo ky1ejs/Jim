@@ -40,6 +40,7 @@ class SelectExercisesTVC: UITableViewController {
     @IBOutlet private weak var segmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         PFQuery(className: "CardioExercise").findObjectsInBackgroundWithBlock { (workouts, error) in
             if let workouts = workouts {
                 self.cardioExercises = workouts
@@ -52,6 +53,12 @@ class SelectExercisesTVC: UITableViewController {
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let addWorkoutTVC = self.navigationController?.viewControllers.first as? AddWorkoutTVC {
+            addWorkoutTVC.workout?["exercises"] = self.selectedExercises
+        }
+    }
     
     @IBAction func segmentControlChanged(segmentControl: UISegmentedControl) {
         switch segmentControl.selectedSegmentIndex {
