@@ -10,12 +10,11 @@ import UIKit
 import Parse
 
 class WorkoutsTVC: UITableViewController {
-    private var workouts = [PFObject]()
+    private var workouts = [Workout]()
     
     override func viewWillAppear(animated: Bool) {
-        let query = PFQuery(className: "Workout")
-        query.findObjectsInBackgroundWithBlock { (workouts, error) -> Void in
-            guard let workouts = workouts else {
+        Workout.query()?.findObjectsInBackgroundWithBlock { (workouts, error) -> Void in
+            guard let workouts = workouts as? [Workout] else {
                 return
             }
             self.workouts = workouts

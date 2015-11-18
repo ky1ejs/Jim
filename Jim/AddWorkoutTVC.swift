@@ -10,11 +10,11 @@ import UIKit
 import Parse
 
 class AddWorkoutTVC: UITableViewController {
-    lazy var workout: PFObject? = {
+    lazy var workout: Workout? = {
         guard let user = PFUser.currentUser() else {
             return nil
         }
-        let wo = PFObject(className: "Workout")
+        let wo = Workout()
         wo.ACL = PFACL(user: user)
         return wo
     }()
@@ -30,7 +30,7 @@ class AddWorkoutTVC: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let selectExercises = segue.destinationViewController as? SelectExercisesTVC, let selectedExercises = self.workout?["exercises"] as? [Exercise] {
+        if let selectExercises = segue.destinationViewController as? SelectExercisesTVC, let selectedExercises = self.workout?.exercises {
             selectExercises.selectedExercises = OrderedSet(array: selectedExercises)
         }
     }
@@ -42,7 +42,7 @@ class AddWorkoutTVC: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 1:
-            if let exercises = self.workout?["exercises"] as? [PFObject] {
+            if let exercises = self.workout?.exercises {
                 return exercises.count + 1
             } else {
                 return 1
@@ -55,16 +55,16 @@ class AddWorkoutTVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
-            if let exercises = self.workout?["exercises"] as? [PFObject], excerciseForRow = exercises[safe: indexPath.row] {
+            if let exercises = self.workout?.exercises, excerciseForRow = exercises[safe: indexPath.row] {
                 let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell")!
-                cell.textLabel?.text = excerciseForRow["name"] as? String
+                cell.textLabel?.text = excerciseForRow.name
                 return cell
             } else {
                 return tableView.dequeueReusableCellWithIdentifier("AddExercisesCell")!
             }
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("NameCell") as! TextFieldCell
-            cell.textField.text = self.workout?["name"] as? String
+            cell.textField.text = self.workout?.name
             return cell
         }
     }

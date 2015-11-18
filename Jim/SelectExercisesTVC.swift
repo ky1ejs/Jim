@@ -56,7 +56,7 @@ class SelectExercisesTVC: UITableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         if let addWorkoutTVC = self.navigationController?.viewControllers.first as? AddWorkoutTVC {
-            addWorkoutTVC.workout?["exercises"] = self.selectedExercises.toArray()
+            addWorkoutTVC.workout?.exercises = self.selectedExercises.toArray()
         }
     }
     
@@ -78,7 +78,7 @@ class SelectExercisesTVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell")!
         let exerciseForRow = self.displayedExercises[indexPath.row]
-        cell.textLabel?.text = exerciseForRow["name"] as? String
+        cell.textLabel?.text = exerciseForRow.name
         cell.accessoryType = self.selectedExercises.contains(exerciseForRow) ? .Checkmark : .None
         return cell
     }
