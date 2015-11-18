@@ -10,29 +10,29 @@ import UIKit
 import Parse
 
 class SelectExercisesTVC: UITableViewController {
-    var displayedExercises = [PFObject]() {
+    var displayedExercises = OrderedSet<Exercise>() {
         didSet {
             self.tableView.reloadData()
         }
     }
-    var selectedExercises = [PFObject]() {
+    var selectedExercises = OrderedSet<Exercise>() {
         didSet {
             if self.segmentControl.selectedSegmentIndex == 0 {
                 self.displayedExercises = selectedExercises
             }
         }
     }
-    var cardioExercises = [PFObject]() {
+    var cardioExercises = OrderedSet<CardioExercise>() {
         didSet {
             if self.segmentControl.selectedSegmentIndex == 1 {
-                self.displayedExercises = cardioExercises
+                self.displayedExercises = OrderedSet<Exercise>(array: cardioExercises.toArray())
             }
         }
     }
-    var strengthExercises = [PFObject]() {
+    var strengthExercises = OrderedSet<StrengthExercise>() {
         didSet {
             if self.segmentControl.selectedSegmentIndex == 2 {
-                self.displayedExercises = strengthExercises
+                self.displayedExercises = OrderedSet<Exercise>(array: strengthExercises.toArray())
             }
         }
     }
@@ -41,30 +41,30 @@ class SelectExercisesTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PFQuery(className: "CardioExercise").findObjectsInBackgroundWithBlock { (workouts, error) in
-            if let workouts = workouts {
-                self.cardioExercises = workouts
+        StrengthExercise.query()?.findObjectsInBackgroundWithBlock({ (exercises, error) -> Void in
+            if let exercises = exercises as? [StrengthExercise] {
+                self.strengthExercises = OrderedSet(array: exercises)
             }
-        }
-        PFQuery(className: "StrengthExercise").findObjectsInBackgroundWithBlock { (workouts, error) in
-            if let workouts = workouts {
-                self.strengthExercises = workouts
+        })
+        CardioExercise.query()?.findObjectsInBackgroundWithBlock({ (exercises, error) -> Void in
+            if let exercises = exercises as? [CardioExercise] {
+                self.cardioExercises = OrderedSet(array: exercises)
             }
-        }
+        })
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         if let addWorkoutTVC = self.navigationController?.viewControllers.first as? AddWorkoutTVC {
-            addWorkoutTVC.workout?["exercises"] = self.selectedExercises
+            addWorkoutTVC.workout?["exercises"] = self.selectedExercises.toArray()
         }
     }
     
     @IBAction func segmentControlChanged(segmentControl: UISegmentedControl) {
         switch segmentControl.selectedSegmentIndex {
         case 0:     self.displayedExercises = self.selectedExercises
-        case 1:     self.displayedExercises = self.cardioExercises
-        case 2:     self.displayedExercises = self.strengthExercises
+        case 1:     self.displayedExercises = OrderedSet(array: self.cardioExercises.toArray())
+        case 2:     self.displayedExercises = OrderedSet(array: self.strengthExercises.toArray())
         default:    break
         }
     }

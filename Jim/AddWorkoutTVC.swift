@@ -19,22 +19,24 @@ class AddWorkoutTVC: UITableViewController {
         return wo
     }()
     
-    @IBOutlet private weak var nameTF: UITextField!
-    
-    override func viewDidLoad() {
-        self.nameTF.text = self.workout?["name"] as? String
-    }
-    
     @IBAction func save() {
-        let workout = self.workout
-        workout?["name"] = self.nameTF.text
-        let _ = try? workout?.save()
+        let _ = try? self.workout?.save()
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let selectExercises = segue.destinationViewController as? SelectExercisesTVC, let selectedExercises = self.workout?["exercises"] as? [Exercise] {
+            selectExercises.selectedExercises = OrderedSet(array: selectedExercises)
+        }
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +48,7 @@ class AddWorkoutTVC: UITableViewController {
                 return 1
             }
         default:
-            return super.tableView(tableView, numberOfRowsInSection: section)
+            return 1
         }
     }
     
@@ -54,14 +56,20 @@ class AddWorkoutTVC: UITableViewController {
         switch indexPath.section {
         case 1:
             if let exercises = self.workout?["exercises"] as? [PFObject], excerciseForRow = exercises[safe: indexPath.row] {
-                let cell = tableView.dequeueReusableCellWithIdentifier("ExcerciseCell")!
+                let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell")!
                 cell.textLabel?.text = excerciseForRow["name"] as? String
                 return cell
             } else {
-                return super.tableView(tableView, cellForRowAtIndexPath: NSIndexPath(forRow: 1, inSection: 1))
+                return tableView.dequeueReusableCellWithIdentifier("AddExercisesCell")!
             }
         default:
-            return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("NameCell") as! TextFieldCell
+            cell.textField.text = self.workout?["name"] as? String
+            return cell
         }
     }
+}
+
+class TextFieldCell: UITableViewCell {
+    @IBOutlet private(set) weak var textField: UITextField!
 }
