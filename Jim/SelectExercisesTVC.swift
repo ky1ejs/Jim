@@ -10,11 +10,7 @@ import UIKit
 import Parse
 
 class SelectExercisesTVC: UITableViewController {
-    var displayedExercises = OrderedSet<Exercise>() {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    var displayedExercises = OrderedSet<Exercise>()
     var selectedExercises = OrderedSet<Exercise>() {
         didSet {
             if self.segmentControl.selectedSegmentIndex == 0 {
@@ -25,14 +21,14 @@ class SelectExercisesTVC: UITableViewController {
     var cardioExercises = OrderedSet<CardioExercise>() {
         didSet {
             if self.segmentControl.selectedSegmentIndex == 1 {
-                self.displayedExercises = OrderedSet<Exercise>(array: cardioExercises.toArray())
+                self.displayedExercises = OrderedSet(array: cardioExercises.toArray())
             }
         }
     }
     var strengthExercises = OrderedSet<StrengthExercise>() {
         didSet {
             if self.segmentControl.selectedSegmentIndex == 2 {
-                self.displayedExercises = OrderedSet<Exercise>(array: strengthExercises.toArray())
+                self.displayedExercises = OrderedSet(array: strengthExercises.toArray())
             }
         }
     }
@@ -67,6 +63,7 @@ class SelectExercisesTVC: UITableViewController {
         case 2:     self.displayedExercises = OrderedSet(array: self.strengthExercises.toArray())
         default:    break
         }
+        self.tableView.reloadData()
     }
     
     
@@ -84,17 +81,19 @@ class SelectExercisesTVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-            self.tableView.beginUpdates()
             if cell.accessoryType == .None {
                 self.selectedExercises.append(self.displayedExercises[indexPath.row])
                 cell.accessoryType = .Checkmark
             } else if let excerciseIndex = self.selectedExercises.indexOf(self.displayedExercises[indexPath.row]) {
                 self.selectedExercises.removeAtIndex(excerciseIndex)
+                if self.segmentControl.selectedSegmentIndex == 0 {
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                    self.displayedExercises = OrderedSet(array: self.selectedExercises.toArray())
+                }
                 cell.accessoryType = .None
             }
-            self.tableView.endUpdates()
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
