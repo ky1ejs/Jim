@@ -72,6 +72,12 @@ class AddWorkoutTVC: UITableViewController {
             return cell
         }
     }
+    
+    @IBAction func nameTextFieldValueChanged(sender: UITextField) {
+        if let text = sender.text {
+            self.workout?.name = text
+        }
+    }
 }
 
 class TextFieldCell: UITableViewCell {
