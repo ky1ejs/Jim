@@ -11,6 +11,13 @@ import Parse
 
 class Exercise: PFObject {
     @NSManaged var name: String
+    
+    override func isEqual(object: AnyObject?) -> Bool {
+        if let object = object as? Exercise {
+            return object.objectId == self.objectId && object.name == self.name
+        }
+        return false
+    }
 }
 
 class StrengthExercise: Exercise, PFSubclassing {
@@ -23,13 +30,4 @@ class CardioExercise: Exercise, PFSubclassing {
     class func parseClassName() -> String {
         return "CardioExercise"
     }
-}
-
-func ==(lhs: StrengthExercise, rhs: StrengthExercise) -> Bool {
-    return lhs.objectId == rhs.objectId && rhs.name == lhs.name
-}
-
-func ==(lhs: CardioExercise, rhs: CardioExercise
-    ) -> Bool {
-    return lhs.objectId == rhs.objectId && rhs.name == lhs.name
 }
