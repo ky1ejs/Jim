@@ -24,6 +24,10 @@ class AddWorkoutTVC: UITableViewController {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func cancel() {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
