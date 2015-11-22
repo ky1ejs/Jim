@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        Parse.setApplicationId(parseAppID, clientKey: parseClientID)
+        Parse.setApplicationId(ParseKeys.appID, clientKey: ParseKeys.clientKey)
         StrengthExercise.registerSubclass()
         CardioExercise.registerSubclass()
         Workout.registerSubclass()
