@@ -31,7 +31,11 @@ class WorkoutsTVC: UITableViewController {
         cell.textLabel?.text = self.workouts[indexPath.row]["name"] as? String
         return cell
     }
-
-    @IBAction func unwindToWorkoutTVC(segue: UIStoryboardSegue) {}
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let detailVC = segue.destinationViewController as? WorkoutDetailTVC, selectedIndex = self.tableView.indexPathForSelectedRow {
+            detailVC.workout = self.workouts[selectedIndex.row]
+        }
+    }
 }
 
