@@ -34,6 +34,22 @@ class WorkoutsTVC: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return .Delete
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let workoutToDelete = self.workouts[indexPath.row]
+        self.workouts.removeAtIndex(indexPath.row)
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        workoutToDelete.deleteInBackgroundWithBlock { (deleted, error) -> Void in
+            if !deleted {
+                self.workouts.insert(workoutToDelete, atIndex: indexPath.row)
+                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            }
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let detailVC = segue.destinationViewController as? WorkoutDetailTVC, selectedIndex = self.tableView.indexPathForSelectedRow {
             detailVC.workout = self.workouts[selectedIndex.row]
