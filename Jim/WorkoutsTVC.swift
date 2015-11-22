@@ -30,7 +30,7 @@ class WorkoutsTVC: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell")!
-        cell.textLabel?.text = self.workouts[indexPath.row]["name"] as? String
+        cell.textLabel?.text = self.workouts[indexPath.row].name
         return cell
     }
     
