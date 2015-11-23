@@ -16,9 +16,11 @@ enum ExerciseType: Int {
 
 class Exercise: PFObject, PFSubclassing {
     @NSManaged var name: String
-    @NSManaged var reps: Int
-    @NSManaged var sets: Int
-    
+    @NSManaged private var urlString: String?
+    var url: NSURL? {
+        get { return NSURL(string: self.urlString ?? "") }
+        set { self.urlString = newValue?.absoluteString }
+    }
     @NSManaged private var typeCode: Int
     var type: ExerciseType {
         get { return ExerciseType(rawValue: self.typeCode)! }
@@ -26,6 +28,13 @@ class Exercise: PFObject, PFSubclassing {
     }
     
     class func parseClassName() -> String { return "Exercise" }
+    
+    convenience init(name: String, type: ExerciseType, url: NSURL?) {
+        self.init()
+        self.name = name
+        self.type = type
+        self.url = url
+    }
     
     override func isEqual(object: AnyObject?) -> Bool {
         if let object = object as? Exercise {

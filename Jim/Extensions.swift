@@ -8,6 +8,42 @@
 
 import UIKit
 
+// MARK: -
+extension UIView {
+    func shake() {
+        let shake = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.1
+        shake.repeatCount = 2
+        shake.autoreverses = true
+        shake.fromValue = NSValue(CGPoint: CGPointMake(self.center.x - 5, self.center.y))
+        shake.toValue = NSValue(CGPoint: CGPointMake(self.center.x + 5, self.center.y))
+        self.layer.addAnimation(shake, forKey: "position")
+    }
+    
+    func boing() {
+        self.boing(delay: 0, completion: nil)
+    }
+    
+    func boing(delay delay: NSTimeInterval?, completion: ((finished: Bool) -> Void)?) {
+        let theDelay = delay != nil ? delay! : 0
+        UIView.animateWithDuration(0.1, delay: theDelay, options: [], animations: { () -> Void in
+            self.transform = CGAffineTransformMakeScale(1.2, 1.2)
+            }) { (finished) -> Void in
+                if finished {
+                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                        self.transform = CGAffineTransformMakeScale(1, 1)
+                        }, completion: completion)
+                }
+        }
+    }
+}
+
+extension Array where Element: UIView {
+    func shake() {
+        self.forEach() { $0.shake() }
+    }
+}
+
 extension Array {
     subscript(safe index: Int) -> Element? {
         return self.indices ~= index ? self[index] : nil

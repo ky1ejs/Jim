@@ -12,7 +12,9 @@ import Parse
 class ExcercisesTVC: UITableViewController {
     private var exercises = [Exercise]()
     
-    override func viewDidLoad() {
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         Exercise.query()?.findObjectsInBackgroundWithBlock({ (exercises, error) -> Void in
             if let exercises = exercises as? [Exercise] {
                 self.exercises = exercises

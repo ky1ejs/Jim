@@ -25,6 +25,7 @@
 		AF1613DB1BBC8A3C008589E2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1613DA1BBC8A3C008589E2 /* StoreKit.framework */; };
 		AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */; };
 		AF3423D31C020F4B00233BE3 /* AddExerciseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3423D21C020F4B00233BE3 /* AddExerciseTVC.swift */; };
+		AF73F1ED1C03B1D800FA5DBF /* WorkoutExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73F1EC1C03B1D800FA5DBF /* WorkoutExercise.swift */; };
 		AF8F700B1BE6D9EF00064AE2 /* ExcercisesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */; };
 		AFB43E411BEE8E89007E8111 /* SelectExercisesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB43E401BEE8E89007E8111 /* SelectExercisesTVC.swift */; };
 		AFBB48611BFD15D500D69E8C /* WorkoutDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB48601BFD15D500D69E8C /* WorkoutDetailTVC.swift */; };
@@ -77,6 +78,7 @@
 		AF1613DA1BBC8A3C008589E2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutTVC.swift; sourceTree = "<group>"; };
 		AF3423D21C020F4B00233BE3 /* AddExerciseTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseTVC.swift; sourceTree = "<group>"; };
+		AF73F1EC1C03B1D800FA5DBF /* WorkoutExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutExercise.swift; sourceTree = "<group>"; };
 		AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcercisesTVC.swift; sourceTree = "<group>"; };
 		AFB43E401BEE8E89007E8111 /* SelectExercisesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectExercisesTVC.swift; sourceTree = "<group>"; };
 		AFBB48601BFD15D500D69E8C /* WorkoutDetailTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailTVC.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				AFF1F5DB1BF8B28700ED799D /* OrderedSet.swift */,
 				AFF1F5DF1BF8FAC000ED799D /* Exercise.swift */,
+				AF73F1EC1C03B1D800FA5DBF /* WorkoutExercise.swift */,
 				AFF1F5DD1BF8EC8C00ED799D /* Workout.swift */,
 			);
 			name = Models;
@@ -357,6 +360,7 @@
 				AFBB48611BFD15D500D69E8C /* WorkoutDetailTVC.swift in Sources */,
 				AF3423D31C020F4B00233BE3 /* AddExerciseTVC.swift in Sources */,
 				AFBB48631BFD15F700D69E8C /* ParseKeys.swift in Sources */,
+				AF73F1ED1C03B1D800FA5DBF /* WorkoutExercise.swift in Sources */,
 				AFD7D30F1BC00E0E00953826 /* Extensions.swift in Sources */,
 				AF16139D1BBC87DC008589E2 /* WorkoutsTVC.swift in Sources */,
 				AF16139B1BBC87DC008589E2 /* AppDelegate.swift in Sources */,

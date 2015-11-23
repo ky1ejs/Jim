@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Parse.setApplicationId(ParseKeys.appID, clientKey: ParseKeys.clientKey)
-        Exercise.registerSubclass() 
+        Exercise.registerSubclass()
+        WorkoutExercise.registerSubclass()
         Workout.registerSubclass()
         
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
