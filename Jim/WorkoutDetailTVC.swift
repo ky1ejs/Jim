@@ -11,13 +11,6 @@ import UIKit
 class WorkoutDetailTVC: UITableViewController {
     var workout: Workout?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        self.workout?.fetchIfNeededInBackgroundWithBlock({ (object, error) -> Void in
-        
-//        })
-    }
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
