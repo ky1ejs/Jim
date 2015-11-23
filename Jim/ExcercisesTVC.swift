@@ -10,56 +10,26 @@ import UIKit
 import Parse
 
 class ExcercisesTVC: UITableViewController {
-    private var displayedExercises = [PFObject]()
-    private var strengthExercises = [PFObject]() {
-        didSet {
-            if self.segmentControl.selectedSegmentIndex == 1 {
-                self.displayedExercises = strengthExercises
-                self.tableView.reloadData()
-            }
-        }
-    }
-    private var cardioExercises = [PFObject]() {
-        didSet {
-            if self.segmentControl.selectedSegmentIndex == 0 {
-                self.displayedExercises = cardioExercises
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    @IBOutlet private weak var segmentControl: UISegmentedControl!
-    
+    private var exercises = [Exercise]()
     
     override func viewDidLoad() {
-        PFQuery(className: "CardioExercise").findObjectsInBackgroundWithBlock { (workouts, error) in
-            if let workouts = workouts {
-                self.cardioExercises = workouts
+        Exercise.query()?.findObjectsInBackgroundWithBlock({ (exercises, error) -> Void in
+            if let exercises = exercises as? [Exercise] {
+                self.exercises = exercises
+                self.tableView.reloadData()
             }
-        }
-        PFQuery(className: "StrengthExercise").findObjectsInBackgroundWithBlock { (workouts, error) in
-            if let workouts = workouts {
-                self.strengthExercises = workouts
-            }
-        }
-    }
-    
-    
-    // MARK: - Segment control
-    @IBAction func segmentControlSelectedChanged(segmentControl: UISegmentedControl) {
-        self.displayedExercises = segmentControl.selectedSegmentIndex == 0 ? self.cardioExercises : self.strengthExercises
-        self.tableView.reloadData()
+        })
     }
     
     
     // MARK: - Table
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.displayedExercises.count
+        return self.exercises.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell")!
-        cell.textLabel?.text = self.displayedExercises[indexPath.row]["name"] as? String
+        cell.textLabel?.text = self.exercises[indexPath.row].name
         return cell
     }
 }

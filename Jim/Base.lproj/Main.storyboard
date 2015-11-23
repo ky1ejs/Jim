@@ -99,26 +99,111 @@
                     <tabBarItem key="tabBarItem" title="Item" id="fKh-5I-tdX"/>
                     <navigationItem key="navigationItem" id="6qt-9b-wvU">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="oEJ-gJ-tDD">
-                            <rect key="frame" x="180" y="7" width="240" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <animations/>
-                            <segments>
-                                <segment title="Cardio"/>
-                                <segment title="Strength"/>
-                            </segments>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="acf-TN-Wyj">
                             <connections>
-                                <action selector="segmentControlSelectedChanged:" destination="ytd-Kd-eYf" eventType="valueChanged" id="89K-Qj-WxQ"/>
+                                <segue destination="Kbf-03-LsJ" kind="presentation" id="R6p-KZ-PuN"/>
                             </connections>
-                        </segmentedControl>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="segmentControl" destination="oEJ-gJ-tDD" id="sfg-am-t7C"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyn-yo-4In" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="274" y="892"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="rXU-JR-NfV">
+            <objects>
+                <tableViewController id="tHv-OP-oO3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="RBO-Ld-OUk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection headerTitle="Name" id="qIo-5f-d4j">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1nt-Yy-SFk">
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1nt-Yy-SFk" id="QeB-LE-W0B">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="91c-8Z-pj4">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="91c-8Z-pj4" secondAttribute="trailing" id="CKW-Rr-x4f"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="91c-8Z-pj4" secondAttribute="bottom" id="cSc-hf-k9T"/>
+                                                <constraint firstItem="91c-8Z-pj4" firstAttribute="top" secondItem="QeB-LE-W0B" secondAttribute="topMargin" id="csO-5S-AZ0"/>
+                                                <constraint firstItem="91c-8Z-pj4" firstAttribute="leading" secondItem="QeB-LE-W0B" secondAttribute="leadingMargin" id="zDi-U0-ZhJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="URL" id="RGo-74-UnT">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vfz-1X-Msb">
+                                        <rect key="frame" x="0.0" y="207.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vfz-1X-Msb" id="RIZ-wd-ip3">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1cb-7b-L1y">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1cb-7b-L1y" secondAttribute="trailing" id="8z7-OY-lOC"/>
+                                                <constraint firstItem="1cb-7b-L1y" firstAttribute="top" secondItem="RIZ-wd-ip3" secondAttribute="topMargin" id="Spo-cp-mdM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1cb-7b-L1y" secondAttribute="bottom" id="wJf-j0-dHB"/>
+                                                <constraint firstItem="1cb-7b-L1y" firstAttribute="leading" secondItem="RIZ-wd-ip3" secondAttribute="leadingMargin" id="wgK-de-I9X"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="tHv-OP-oO3" id="BCT-FV-I4i"/>
+                            <outlet property="delegate" destination="tHv-OP-oO3" id="cyn-EA-ide"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ohj-gb-Dv2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RBs-ge-8sy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="892"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sP9-85-cLy">
+            <objects>
+                <navigationController id="Kbf-03-LsJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTH-E1-WVi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tHv-OP-oO3" kind="relationship" relationship="rootViewController" id="27m-pi-Y0O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MBi-cR-geu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="892"/>
         </scene>
         <!--WorkoutsTVC-->
         <scene sceneID="4t9-vt-NqY">
@@ -339,8 +424,7 @@
                             <animations/>
                             <segments>
                                 <segment title="Selected"/>
-                                <segment title="Cardio"/>
-                                <segment title="Strength"/>
+                                <segment title="All Exercises"/>
                             </segments>
                             <connections>
                                 <action selector="segmentControlChanged:" destination="cCa-h9-t2u" eventType="valueChanged" id="8ql-y1-xIP"/>

@@ -18,17 +18,10 @@ class SelectExercisesTVC: UITableViewController {
             }
         }
     }
-    var cardioExercises = OrderedSet<CardioExercise>() {
+    var exercises = OrderedSet<Exercise>() {
         didSet {
             if self.segmentControl.selectedSegmentIndex == 1 {
-                self.displayedExercises = OrderedSet(array: cardioExercises.toArray())
-            }
-        }
-    }
-    var strengthExercises = OrderedSet<StrengthExercise>() {
-        didSet {
-            if self.segmentControl.selectedSegmentIndex == 2 {
-                self.displayedExercises = OrderedSet(array: strengthExercises.toArray())
+                self.displayedExercises = exercises
             }
         }
     }
@@ -37,14 +30,9 @@ class SelectExercisesTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        StrengthExercise.query()?.findObjectsInBackgroundWithBlock({ (exercises, error) -> Void in
-            if let exercises = exercises as? [StrengthExercise] {
-                self.strengthExercises = OrderedSet(array: exercises)
-            }
-        })
-        CardioExercise.query()?.findObjectsInBackgroundWithBlock({ (exercises, error) -> Void in
-            if let exercises = exercises as? [CardioExercise] {
-                self.cardioExercises = OrderedSet(array: exercises)
+        Exercise.query()?.findObjectsInBackgroundWithBlock({ (exercises, error) -> Void in
+            if let exercises = exercises as? [Exercise] {
+                self.exercises = OrderedSet(array: exercises)
             }
         })
     }
@@ -59,8 +47,7 @@ class SelectExercisesTVC: UITableViewController {
     @IBAction func segmentControlChanged(segmentControl: UISegmentedControl) {
         switch segmentControl.selectedSegmentIndex {
         case 0:     self.displayedExercises = self.selectedExercises
-        case 1:     self.displayedExercises = OrderedSet(array: self.cardioExercises.toArray())
-        case 2:     self.displayedExercises = OrderedSet(array: self.strengthExercises.toArray())
+        case 1:     self.displayedExercises = self.exercises
         default:    break
         }
         self.tableView.reloadData()
