@@ -38,14 +38,32 @@ extension UIView {
     }
 }
 
+
+// MARK: -
+extension Array {
+    subscript(safe index: Int) -> Element? {
+        return self.indices ~= index ? self[index] : nil
+    }
+}
+
 extension Array where Element: UIView {
     func shake() {
         self.forEach() { $0.shake() }
     }
 }
 
-extension Array {
-    subscript(safe index: Int) -> Element? {
-        return self.indices ~= index ? self[index] : nil
+extension Array where Element: PlannedExercise {
+    var exercises: [Exercise] {
+        var e = [Exercise]()
+        for workoutExercise in self {
+            if let workoutExercise = workoutExercise as? PlannedSet {
+                e.append(workoutExercise.exercise)
+            } else if let workoutExercise = workoutExercise as? PlannedSuperset {
+                for supersetExercise in workoutExercise.exercises {
+                    e.append(supersetExercise.exercise)
+                }
+            }
+        }
+        return e
     }
 }

@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         // Override point for customization after application launch.
         Parse.setApplicationId(ParseKeys.appID, clientKey: ParseKeys.clientKey)
         Exercise.registerSubclass()
-        WorkoutExercise.registerSubclass()
+        PlannedSet.registerSubclass()
+        PlannedSuperset.registerSubclass()
         Workout.registerSubclass()
         
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)

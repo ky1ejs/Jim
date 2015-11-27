@@ -33,3 +33,6 @@ fastlane/report.xml
 
 ## Parse
 ParseKeys.swift
+
+## R.swift
+R.generated.swift

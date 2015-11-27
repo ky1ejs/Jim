@@ -40,7 +40,7 @@ class SelectExercisesTVC: UITableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         if let addWorkoutTVC = self.navigationController?.viewControllers.first as? AddWorkoutTVC {
-            addWorkoutTVC.workout?.exercises = self.selectedExercises.toArray()
+//            addWorkoutTVC.workout?.exercises = self.selectedExercises.toArray()
         }
     }
     

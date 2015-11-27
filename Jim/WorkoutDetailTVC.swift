@@ -18,7 +18,7 @@ class WorkoutDetailTVC: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:     return 1
-        case 1:     return self.workout?.exercises.count ?? 0
+        case 1:     return self.workout?.plannedExercises.exercises.count ?? 0
         default:    return 0
         }
     }
@@ -27,7 +27,7 @@ class WorkoutDetailTVC: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell")!
         switch indexPath.section {
         case 0:     cell.textLabel?.text = self.workout?.name
-        case 1:     cell.textLabel?.text = self.workout?.exercises[indexPath.row].name
+        case 1:     cell.textLabel?.text = self.workout?.plannedExercises.exercises[indexPath.row].name
         default:    break
         }
         return cell

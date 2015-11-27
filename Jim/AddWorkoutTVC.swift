@@ -34,7 +34,7 @@ class AddWorkoutTVC: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let selectExercises = segue.destinationViewController as? SelectExercisesTVC, let selectedExercises = self.workout?.exercises {
+        if let selectExercises = segue.destinationViewController as? SelectExercisesTVC, let selectedExercises = self.workout?.plannedExercises.exercises {
             selectExercises.selectedExercises = OrderedSet(array: selectedExercises)
         }
     }
@@ -46,8 +46,8 @@ class AddWorkoutTVC: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 1:
-            if let exercises = self.workout?.exercises {
-                return exercises.count + 1
+            if let plannedExercises = self.workout?.plannedExercises {
+                return plannedExercises.exercises.count + 1
             } else {
                 return 1
             }
@@ -59,9 +59,9 @@ class AddWorkoutTVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
-            if let exercises = self.workout?.exercises, excerciseForRow = exercises[safe: indexPath.row] {
+            if let plannedExercises = self.workout?.plannedExercises, plannedExercisesForRow = plannedExercises.exercises[safe: indexPath.row] {
                 let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell")!
-                cell.textLabel?.text = excerciseForRow.name
+                cell.textLabel?.text = plannedExercisesForRow.name
                 return cell
             } else {
                 return tableView.dequeueReusableCellWithIdentifier("AddExercisesCell")!
