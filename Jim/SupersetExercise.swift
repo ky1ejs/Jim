@@ -16,4 +16,10 @@ class SupersetExercise: PFObject, PFSubclassing {
     static func parseClassName() -> String {
         return "SupersetExercise"
     }
+    
+    convenience init(exercise: Exercise, reps: Int) {
+        self.init()
+        self.exercise = exercise
+        self.reps = reps
+    }
 }

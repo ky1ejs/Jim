@@ -26,15 +26,17 @@
 		AF1613DF1BBC97E0008589E2 /* AddWorkoutTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */; };
 		AF2DA2F81C0662BE0041A15E /* PlannedSuperset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DA2F71C0662BE0041A15E /* PlannedSuperset.swift */; };
 		AF2DA2FA1C0662DF0041A15E /* PlannedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DA2F91C0662DF0041A15E /* PlannedSet.swift */; };
-		AF2DA2FC1C0664050041A15E /* PlanSetsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DA2FB1C0664050041A15E /* PlanSetsTVC.swift */; };
+		AF2DA2FC1C0664050041A15E /* PlanSupersetTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DA2FB1C0664050041A15E /* PlanSupersetTVC.swift */; };
 		AF2DA2FE1C0700650041A15E /* SupersetExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DA2FD1C0700650041A15E /* SupersetExercise.swift */; };
 		AF2DA3011C0704090041A15E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DA3001C0704090041A15E /* R.generated.swift */; };
 		AF3423D31C020F4B00233BE3 /* AddExerciseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3423D21C020F4B00233BE3 /* AddExerciseTVC.swift */; };
 		AF73F1ED1C03B1D800FA5DBF /* PlannedExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF73F1EC1C03B1D800FA5DBF /* PlannedExercise.swift */; };
 		AF8F700B1BE6D9EF00064AE2 /* ExcercisesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */; };
-		AFB43E411BEE8E89007E8111 /* SelectExercisesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB43E401BEE8E89007E8111 /* SelectExercisesTVC.swift */; };
+		AFB43E411BEE8E89007E8111 /* SelectSupersetExercisesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB43E401BEE8E89007E8111 /* SelectSupersetExercisesTVC.swift */; };
 		AFBB48611BFD15D500D69E8C /* WorkoutDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB48601BFD15D500D69E8C /* WorkoutDetailTVC.swift */; };
 		AFBB48631BFD15F700D69E8C /* ParseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBB48621BFD15F700D69E8C /* ParseKeys.swift */; };
+		AFBFCFF41C086EE90085A27C /* SelectSetExerciseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBFCFF31C086EE90085A27C /* SelectSetExerciseTVC.swift */; };
+		AFBFCFF61C0878610085A27C /* PlanSetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBFCFF51C0878610085A27C /* PlanSetVC.swift */; };
 		AFD7D30F1BC00E0E00953826 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD7D30E1BC00E0E00953826 /* Extensions.swift */; };
 		AFF1F5DC1BF8B28700ED799D /* OrderedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1F5DB1BF8B28700ED799D /* OrderedSet.swift */; };
 		AFF1F5DE1BF8EC8C00ED799D /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1F5DD1BF8EC8C00ED799D /* Workout.swift */; };
@@ -84,15 +86,17 @@
 		AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWorkoutTVC.swift; sourceTree = "<group>"; };
 		AF2DA2F71C0662BE0041A15E /* PlannedSuperset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedSuperset.swift; sourceTree = "<group>"; };
 		AF2DA2F91C0662DF0041A15E /* PlannedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedSet.swift; sourceTree = "<group>"; };
-		AF2DA2FB1C0664050041A15E /* PlanSetsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanSetsTVC.swift; sourceTree = "<group>"; };
+		AF2DA2FB1C0664050041A15E /* PlanSupersetTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanSupersetTVC.swift; sourceTree = "<group>"; };
 		AF2DA2FD1C0700650041A15E /* SupersetExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupersetExercise.swift; sourceTree = "<group>"; };
 		AF2DA3001C0704090041A15E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		AF3423D21C020F4B00233BE3 /* AddExerciseTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseTVC.swift; sourceTree = "<group>"; };
 		AF73F1EC1C03B1D800FA5DBF /* PlannedExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlannedExercise.swift; sourceTree = "<group>"; };
 		AF8F700A1BE6D9EF00064AE2 /* ExcercisesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcercisesTVC.swift; sourceTree = "<group>"; };
-		AFB43E401BEE8E89007E8111 /* SelectExercisesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectExercisesTVC.swift; sourceTree = "<group>"; };
+		AFB43E401BEE8E89007E8111 /* SelectSupersetExercisesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSupersetExercisesTVC.swift; sourceTree = "<group>"; };
 		AFBB48601BFD15D500D69E8C /* WorkoutDetailTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailTVC.swift; sourceTree = "<group>"; };
 		AFBB48621BFD15F700D69E8C /* ParseKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseKeys.swift; sourceTree = "<group>"; };
+		AFBFCFF31C086EE90085A27C /* SelectSetExerciseTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSetExerciseTVC.swift; sourceTree = "<group>"; };
+		AFBFCFF51C0878610085A27C /* PlanSetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanSetVC.swift; sourceTree = "<group>"; };
 		AFD7D30E1BC00E0E00953826 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AFF1F5DB1BF8B28700ED799D /* OrderedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedSet.swift; sourceTree = "<group>"; };
 		AFF1F5DD1BF8EC8C00ED799D /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -229,8 +233,10 @@
 			isa = PBXGroup;
 			children = (
 				AF1613DE1BBC97E0008589E2 /* AddWorkoutTVC.swift */,
-				AFB43E401BEE8E89007E8111 /* SelectExercisesTVC.swift */,
-				AF2DA2FB1C0664050041A15E /* PlanSetsTVC.swift */,
+				AFBFCFF31C086EE90085A27C /* SelectSetExerciseTVC.swift */,
+				AFBFCFF51C0878610085A27C /* PlanSetVC.swift */,
+				AFB43E401BEE8E89007E8111 /* SelectSupersetExercisesTVC.swift */,
+				AF2DA2FB1C0664050041A15E /* PlanSupersetTVC.swift */,
 			);
 			name = "Add Workout";
 			sourceTree = "<group>";
@@ -400,7 +406,7 @@
 				AFBB48611BFD15D500D69E8C /* WorkoutDetailTVC.swift in Sources */,
 				AF3423D31C020F4B00233BE3 /* AddExerciseTVC.swift in Sources */,
 				AFBB48631BFD15F700D69E8C /* ParseKeys.swift in Sources */,
-				AF2DA2FC1C0664050041A15E /* PlanSetsTVC.swift in Sources */,
+				AF2DA2FC1C0664050041A15E /* PlanSupersetTVC.swift in Sources */,
 				AF73F1ED1C03B1D800FA5DBF /* PlannedExercise.swift in Sources */,
 				AFD7D30F1BC00E0E00953826 /* Extensions.swift in Sources */,
 				AF16139D1BBC87DC008589E2 /* WorkoutsTVC.swift in Sources */,
@@ -414,7 +420,9 @@
 				AF2DA2FA1C0662DF0041A15E /* PlannedSet.swift in Sources */,
 				AF2DA2F81C0662BE0041A15E /* PlannedSuperset.swift in Sources */,
 				AF8F700B1BE6D9EF00064AE2 /* ExcercisesTVC.swift in Sources */,
-				AFB43E411BEE8E89007E8111 /* SelectExercisesTVC.swift in Sources */,
+				AFB43E411BEE8E89007E8111 /* SelectSupersetExercisesTVC.swift in Sources */,
+				AFBFCFF41C086EE90085A27C /* SelectSetExerciseTVC.swift in Sources */,
+				AFBFCFF61C0878610085A27C /* PlanSetVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

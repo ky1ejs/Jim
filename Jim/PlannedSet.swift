@@ -14,10 +14,11 @@ class PlannedSet: PlannedExercise, PFSubclassing {
     @NSManaged var reps: Int
     static func parseClassName() -> String { return "PlannedSet" }
     
-    convenience init(exercise: Exercise, reps: Int) {
+    convenience init(exercise: Exercise, reps: Int, sets: Int) {
         self.init()
         self.exercise = exercise
         self.reps = reps
+        self.sets = sets
     }
 }
 

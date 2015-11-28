@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         Exercise.registerSubclass()
         PlannedSet.registerSubclass()
         PlannedSuperset.registerSubclass()
+        SupersetExercise.registerSubclass()
         Workout.registerSubclass()
         
         let window = UIWindow(frame: UIScreen.mainScreen().bounds)
