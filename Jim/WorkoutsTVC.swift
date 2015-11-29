@@ -14,7 +14,8 @@ class WorkoutsTVC: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         let query = Workout.query()
-        query?.includeKey("exercises")
+        query?.includeKey("plannedExercises.exercise")
+        query?.includeKey("plannedExercises.exercises")
         query?.findObjectsInBackgroundWithBlock { (workouts, error) -> Void in
             guard let workouts = workouts as? [Workout] else {
                 return
