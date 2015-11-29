@@ -601,7 +601,7 @@
             </objects>
             <point key="canvasLocation" x="1747" y="-665"/>
         </scene>
-        <!--Plan SupersetTVC-->
+        <!--Title-->
         <scene sceneID="vWM-5d-d6r">
             <objects>
                 <tableViewController id="McX-dE-2cD" customClass="PlanSupersetTVC" customModule="Jim" customModuleProvider="target" sceneMemberID="viewController">
@@ -659,7 +659,7 @@
                                     <outlet property="textLabel" destination="XiN-VB-gKJ" id="VUQ-AY-gmn"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SupersetTotalSetsCell" rowHeight="44" id="pUh-M3-Bff">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SupersetTotalSetsCell" rowHeight="44" id="pUh-M3-Bff" customClass="TotalSetsCell" customModule="Jim" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pUh-M3-Bff" id="9J2-Po-WSz">
@@ -702,6 +702,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="setsTF" destination="k2f-eD-0o2" id="sOF-3N-jS3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -709,6 +712,13 @@
                             <outlet property="delegate" destination="McX-dE-2cD" id="rV0-ZK-vez"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="x2J-px-dzr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KSO-Jr-rE2">
+                            <connections>
+                                <action selector="save" destination="McX-dE-2cD" id="VAJ-89-gbb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjv-CZ-bDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

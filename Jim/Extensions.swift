@@ -67,3 +67,13 @@ extension Array where Element: PlannedExercise {
         return e
     }
 }
+
+extension Array where Element: SupersetExercise {
+    var exercises: [Exercise] {
+        var e = [Exercise]()
+        for supersetExercise in self {
+            e.append(supersetExercise.exercise)
+        }
+        return e
+    }
+}

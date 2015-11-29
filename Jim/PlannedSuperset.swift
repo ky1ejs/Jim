@@ -13,4 +13,10 @@ class PlannedSuperset: PlannedExercise, PFSubclassing {
     @NSManaged var exercises: [SupersetExercise]
     
     static func parseClassName() -> String { return "PlannedSuperset" }
+    
+    convenience init(supersetExercises: [SupersetExercise], sets: Int) {
+        self.init()
+        self.exercises = supersetExercises
+        self.sets = sets
+    }
 }
