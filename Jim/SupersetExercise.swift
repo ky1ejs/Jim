@@ -12,10 +12,9 @@ import Parse
 class SupersetExercise: PFObject, PFSubclassing {
     @NSManaged var exercise: Exercise
     @NSManaged var reps: Int
+    @NSManaged var weight: Float
     
-    static func parseClassName() -> String {
-        return "SupersetExercise"
-    }
+    static func parseClassName() -> String { return "SupersetExercise" }
     
     convenience init(exercise: Exercise, reps: Int) {
         self.init()

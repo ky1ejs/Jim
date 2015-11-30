@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PFLogInViewControllerDele
         // Override point for customization after application launch.
         Parse.setApplicationId(ParseKeys.appID, clientKey: ParseKeys.clientKey)
         Exercise.registerSubclass()
-        PlannedSet.registerSubclass()
-        PlannedSuperset.registerSubclass()
+        SingleExerciseSet.registerSubclass()
+        Superset.registerSubclass()
         SupersetExercise.registerSubclass()
         Workout.registerSubclass()
         

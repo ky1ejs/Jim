@@ -1,5 +1,5 @@
 //
-//  PlannedSet.swift
+//  SingleExerciseSet.swift
 //  Jim
 //
 //  Created by Kyle McAlpine on 25/11/2015.
@@ -9,10 +9,10 @@
 import UIKit
 import Parse
 
-class PlannedSet: PlannedExercise, PFSubclassing {
+class SingleExerciseSet: Set, PFSubclassing {
     @NSManaged var exercise: Exercise
     @NSManaged var reps: Int
-    static func parseClassName() -> String { return "PlannedSet" }
+    static func parseClassName() -> String { return "SingleExerciseSet" }
     
     convenience init(exercise: Exercise, reps: Int, sets: Int) {
         self.init()

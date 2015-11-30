@@ -11,15 +11,15 @@ import Parse
 
 class PlanSupersetTVC: UITableViewController {
     var exercises: [Exercise] {
-        get { return self.plannedExercises.exercises }
+        get { return self.supersetExercises.exercises }
         set {
-                self.plannedExercises = [SupersetExercise]()
-                newValue.forEach() { self.plannedExercises.append(SupersetExercise(exercise: $0, reps: 12))
+                self.supersetExercises = [SupersetExercise]()
+                newValue.forEach() { self.supersetExercises.append(SupersetExercise(exercise: $0, reps: 12))
             }
         }
     }
     private var totalSets: Int = 3
-    private var plannedExercises = [SupersetExercise]()
+    private var supersetExercises = [SupersetExercise]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +28,15 @@ class PlanSupersetTVC: UITableViewController {
     
     @IBAction func save() {
         if let user = PFUser.currentUser(), addWorkoutTVC = self.navigationController?.viewControllers.first as? AddWorkoutTVC {
-            let plannedSuperset = PlannedSuperset(supersetExercises: self.plannedExercises, sets: self.totalSets)
-            plannedSuperset.ACL = PFACL(user: user)
-            addWorkoutTVC.addExercise(plannedSuperset, andPop: true)
+            let superset = Superset(exercises: self.supersetExercises, sets: self.totalSets)
+            superset.ACL = PFACL(user: user)
+            addWorkoutTVC.addExerciseSet(superset, andPop: true)
         }
     }
     
     func repsTFTextChanged(textField: UITextField) {
         if let reps = Int(textField.text ?? "") {
-            self.plannedExercises[textField.tag].reps = reps
+            self.supersetExercises[textField.tag].reps = reps
         }
     }
     
@@ -48,11 +48,11 @@ class PlanSupersetTVC: UITableViewController {
     
     // MARK: Table view
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.plannedExercises.count + 1
+        return self.supersetExercises.count + 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let exerciseForRow = self.plannedExercises[safe: indexPath.row] {
+        if let exerciseForRow = self.supersetExercises[safe: indexPath.row] {
             let cell = tableView.dequeueReusableCellWithIdentifier(R.reuseIdentifier.supersetExerciseCell)!
             cell.textLabel?.text = exerciseForRow.exercise.name
             cell.repsTF.text = "\(exerciseForRow.reps)"
@@ -72,23 +72,13 @@ class PlanSupersetTVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        let setToMove = self.plannedExercises[sourceIndexPath.row]
-        self.plannedExercises.removeAtIndex(sourceIndexPath.row)
-        self.plannedExercises.insert(setToMove, atIndex: destinationIndexPath.row)
+        let setToMove = self.supersetExercises[sourceIndexPath.row]
+        self.supersetExercises.removeAtIndex(sourceIndexPath.row)
+        self.supersetExercises.insert(setToMove, atIndex: destinationIndexPath.row)
     }
 }
 
-class PlannedSetCell: UITableViewCell {
-    private var _textLabel: UILabel?
-    @IBOutlet override var textLabel: UILabel? {
-        get { return self._textLabel }
-        set { self._textLabel = newValue }
-    }
-    @IBOutlet var repsTF: UITextField!
-    @IBOutlet var setsTF: UITextField!
-}
-
-class PlannedSupersetCell: UITableViewCell {
+class SupersetCell: UITableViewCell {
     private var _textLabel: UILabel?
     @IBOutlet override var textLabel: UILabel? {
         get { return self._textLabel }

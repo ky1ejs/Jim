@@ -11,9 +11,7 @@ import Parse
 
 class Workout: PFObject, PFSubclassing {
     @NSManaged var name: String
-    @NSManaged var plannedExercises: [PlannedExercise]
+    @NSManaged var exerciseSets: [Set]
     
-    class func parseClassName() -> String {
-        return "Workout"
-    }
+    class func parseClassName() -> String { return "Workout" }
 }

@@ -52,13 +52,13 @@ extension Array where Element: UIView {
     }
 }
 
-extension Array where Element: PlannedExercise {
+extension Array where Element: Set {
     var exercises: [Exercise] {
         var e = [Exercise]()
         for workoutExercise in self {
-            if let workoutExercise = workoutExercise as? PlannedSet {
+            if let workoutExercise = workoutExercise as? SingleExerciseSet {
                 e.append(workoutExercise.exercise)
-            } else if let workoutExercise = workoutExercise as? PlannedSuperset {
+            } else if let workoutExercise = workoutExercise as? Superset {
                 for supersetExercise in workoutExercise.exercises {
                     e.append(supersetExercise.exercise)
                 }

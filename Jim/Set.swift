@@ -1,5 +1,5 @@
 //
-//  PlannedExercise.swift
+//  Set.swift
 //  Jim
 //
 //  Created by Kyle McAlpine on 23/11/2015.
@@ -9,6 +9,6 @@
 import UIKit
 import Parse
 
-class PlannedExercise: PFObject {
+class Set: PFObject {
     @NSManaged var sets: Int
 }

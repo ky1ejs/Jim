@@ -39,8 +39,8 @@ class AddWorkoutTVC: UITableViewController, UIActionSheetDelegate {
         }
     }
     
-    func addExercise(exercise: PlannedExercise, andPop pop: Bool) {
-        self.workout?.plannedExercises.append(exercise)
+    func addExerciseSet(exercise: Set, andPop pop: Bool) {
+        self.workout?.exerciseSets.append(exercise)
         if pop {
             self.navigationController?.popToViewController(self, animated: true)
         }
@@ -55,8 +55,8 @@ class AddWorkoutTVC: UITableViewController, UIActionSheetDelegate {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 1:
-            if let plannedExercises = self.workout?.plannedExercises {
-                return plannedExercises.exercises.count + 1
+            if let exerciseSets = self.workout?.exerciseSets {
+                return exerciseSets.exercises.count + 1
             } else {
                 return 1
             }
@@ -68,9 +68,9 @@ class AddWorkoutTVC: UITableViewController, UIActionSheetDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
-            if let plannedExercises = self.workout?.plannedExercises, plannedExercisesForRow = plannedExercises.exercises[safe: indexPath.row] {
+            if let exerciseSets = self.workout?.exerciseSets, exerciseSetForRow = exerciseSets.exercises[safe: indexPath.row] {
                 let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell")!
-                cell.textLabel?.text = plannedExercisesForRow.name
+                cell.textLabel?.text = exerciseSetForRow.name
                 return cell
             } else {
                 return tableView.dequeueReusableCellWithIdentifier("AddExercisesCell")!

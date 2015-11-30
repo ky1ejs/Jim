@@ -35,9 +35,19 @@ class PlanSetVC: UIViewController {
         if invalidFields.count > 0 {
             invalidFields.shake()
         } else if let exercise = self.exercise, user = PFUser.currentUser(), addWorkoutTVC = self.navigationController?.viewControllers.first as? AddWorkoutTVC {
-            let plannedSet = PlannedSet(exercise: exercise, reps: reps, sets: sets)
-            plannedSet.ACL = PFACL(user: user)
-            addWorkoutTVC.addExercise(plannedSet, andPop: true)
+            let set = SingleExerciseSet(exercise: exercise, reps: reps, sets: sets)
+            set.ACL = PFACL(user: user)
+            addWorkoutTVC.addExerciseSet(set, andPop: true)
         }
     }
+}
+
+class SetCell: UITableViewCell {
+    private var _textLabel: UILabel?
+    @IBOutlet override var textLabel: UILabel? {
+        get { return self._textLabel }
+        set { self._textLabel = newValue }
+    }
+    @IBOutlet var repsTF: UITextField!
+    @IBOutlet var setsTF: UITextField!
 }
