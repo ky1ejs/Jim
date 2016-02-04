@@ -38,3 +38,4 @@ You'll then need to make an app in [Parse](http://parse.com) and add the App ID 
 - Progress photo tracker
 - Weigth tracker
 - got more to add from my notes, will do later
+- support a [parse alternative](https://github.com/relatedcode/ParseAlternatives/)
