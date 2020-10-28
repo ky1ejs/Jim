@@ -1,3 +1,17 @@
+# Archived
+Not much explaining needed... this project is really old and I didn't (and don't) have the time to push it forward.
+
+Even if I did, [Strong](https://www.strong.app/) does everything I'd want in a strength work out tracker anyhow. The team behind it are awesome, also.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
 
 # Jim :muscle:
 ### Your PT in your pocket and on your wrist
